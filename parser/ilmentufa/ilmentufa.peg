@@ -1,6 +1,8 @@
 # This is a slightly modified copy of
 # https://github.com/lojban/ilmentufa/blob/master/camxes-beta.peg
 # at commit 11f192aa33a9bedc1aa0497f61d6584b4dc853f2.
+# The jbocme rule was modified to replace the use of * with +
+# this eliminates a left-recursion in the grammar.
 #
 # Copyright (c) 2013, 2014 Masato Hagiwara
 #
@@ -1375,7 +1377,7 @@ cmevla <- jbocme / zifcme
 
 zifcme <- !h (nucleus / glide / h / consonant !pause / digit)* consonant &pause
 
-jbocme <- &zifcme (any_syllable / digit)* &pause
+jbocme <- &zifcme (any_syllable / digit)+ &pause
 
 #cmevla = !h cmevla_syllable* &consonant coda? consonantal_syllable* onset &pause
 

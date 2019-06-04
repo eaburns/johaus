@@ -3,6 +3,8 @@
 # at commit ee594071942a9c0ac5e6b3ffb2a574ceb1bf6375,
 # run through pegjs_conv.js, which is available here:
 # https://github.com/lojban/ilmentufa/blob/master/pegjs_conv.js
+# The jbocme rule was modified to replace the use of * with +
+# this eliminates a left-recursion in the grammar.
 #
 # Copyright (c) 2013, 2014 Masato Hagiwara
 # la guskant cu co'a galfi_20150604
@@ -856,7 +858,7 @@ zoi_close <- word:lojban_word spaces? &{ parser.data.(string) ==  strings.ToLowe
 #___________________________________________________________________
 cmevla <- jbocme / zifcme
 zifcme <- !h (nucleus / glide / h / consonant !pause)* consonant &pause
-jbocme <- &zifcme any_syllable* &pause
+jbocme <- &zifcme any_syllable+ &pause
 #___________________________________________________________________
 cmavo <- !cmevla !CVCy_lujvo cmavo_form &post_word
 CVCy_lujvo <- CVC_rafsi y h? initial_rafsi* brivla_core / stressed_CVC_rafsi y short_final_rafsi

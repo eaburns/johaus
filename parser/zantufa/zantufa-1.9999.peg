@@ -1,6 +1,8 @@
 # This is a slightly modified copy of
 # https://github.com/guskant/gerna_cipra/blob/master/zantufa-1.9999.peg
 # at commit 4c16483960575c06ad781f607b5cb198b3fe2cf4.
+# The jbocme rule was modified to replace the use of * with +
+# this eliminates a left-recursion in the grammar.
 #
 # la'o zoi zantufa-1.9999.peg zoi peg zei gerna de'i li 20170709 tede'i UTC
 # i ku'i la'o peg zoi_open zoi_word zoi_close peg na'e ka'e se tamgau va'o la peg po'o fa'o
@@ -433,7 +435,7 @@ zoi_word <- word:(non_space+) spaces  !{ parser.data.(string) ==  strings.ToLowe
 zoi_close <- word:any_word &{ parser.data.(string) ==  strings.ToLower(word) }
 cmevla <- (jbocme / zifcme)
 zifcme <- (!h (nucleus / glide / h / consonant !pause)* consonant &pause)
-jbocme <- (&zifcme any_syllable* &pause)
+jbocme <- (&zifcme any_syllable+ &pause)
 cmavo <- (!cmevla !CVCy_lujvo cmavo_form &post_word)
 CVCy_lujvo <- (CVC_rafsi y h? initial_rafsi* brivla_core / stressed_CVC_rafsi y short_final_rafsi)
 cmavo_form <- (!h !cluster onset (nucleus h)* (!stressed nucleus / nucleus !cluster) / y+)
