@@ -1,0 +1,6 @@
+github.com/eaburns/peggy v1.0.0 h1:cvZIO5GGq2Qy1l1Va0Mte6LFVTY6GtAGbzSvouFcjUk=
+github.com/eaburns/peggy v1.0.0/go.mod h1:X2pbl0EV5erfnK8kSGwo0lBCgMGokvR1E6KerAoDKXg=
+github.com/eaburns/pretty v1.0.0 h1:00W1wrrtMXUSqLPN0txS8j7g9qFXy6nA5vZVqVQOo6w=
+github.com/eaburns/pretty v1.0.0/go.mod h1:retcK8A0KEgdmb0nuxhvyxixwCmEPO7SKlK0IJhjg8A=
+github.com/velour/chat v0.0.0-20180713122344-fd1d1606cb89 h1:3D3M900hEBJJAqyKl70QuRHi5weX9+ptlQI1v+FNcQ8=
+github.com/velour/chat v0.0.0-20180713122344-fd1d1606cb89/go.mod h1:ejwOYCjnDMyO5LXFXRARQJGBZ6xQJZ3rgAHE5drSuMM=
